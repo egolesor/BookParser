@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Utils to parse the books, offers from the page ebooks.com
  */
-public class EBooksParser implements BaseParser{
+public class EBooksParser implements BaseParser<Element>{
 
     /**
      * Searching for the books that are offered by the ebooks.com list the offers

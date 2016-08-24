@@ -26,7 +26,7 @@ public class AppTest {
         List<BookData> bookDataList = null;
         String profile = "art";
 
-        BaseParser parser = new EBooksParser();
+        BaseParser<Element> parser = new EBooksParser();
 
         try {
             List<Element> elements = parser.getOffers(documentBuilder.setProfile(profile).buildFromUrl());

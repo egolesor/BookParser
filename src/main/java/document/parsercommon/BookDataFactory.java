@@ -1,9 +1,6 @@
 package document.parsercommon;
 
-import org.jsoup.nodes.Element;
-
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
