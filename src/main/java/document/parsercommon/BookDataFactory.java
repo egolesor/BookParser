@@ -2,8 +2,8 @@ package document.parsercommon;
 
 import org.jsoup.nodes.Element;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ehsan on 24.08.16.
@@ -17,7 +17,7 @@ public class BookDataFactory {
                 .setTitle(bookDataGetter.getTitle(element))
                 .setAuthor(bookDataGetter.getAuthor(element))
                 .setDescription(bookDataGetter.getDescription(element))
-                .setprice(bookDataGetter.getPrice(element))
+                .setPrice(bookDataGetter.getPrice(element))
                 .setUrl(bookDataGetter.getUrl(element))
                 .setLibrary(library)
                 .setProfile(profile)
@@ -25,14 +25,9 @@ public class BookDataFactory {
     }
 
     public static List<BookData> newListBookData(List<Element> elements, BookDataGetter bookDataGetter, String library, String profile){
-        List<BookData> bookDataList = new ArrayList<>(elements.size());
-
-        for(Element element:elements){
-            bookDataList.add(prepareBookData(element, bookDataGetter, library, profile));
-        }
-
-        return bookDataList;
+        return elements.stream().map(e->
+                prepareBookData(e, bookDataGetter, library, profile))
+                .collect(Collectors.toList());
     }
-
 
 }

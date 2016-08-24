@@ -26,14 +26,14 @@ public class AppTest {
         List<BookData> bookDataList = null;
         String profile = "education";
 
-        BaseParser parser = new EbooksParser();
+        BaseParser parser = new EBooksParser();
 
         try {
             List<Element> elements = parser.getOffers(documentBuilder.setProfile(profile).buildFromUrl());
 
             BookDataGetter getter = new EBookComDataGetter();
             bookDataList = BookDataFactory.newListBookData(elements,
-                    getter, UrlUtil.URL_EBOOKS_COM ,profile);
+                    getter, UrlUtil.URL_E_BOOKS_COM,profile);
 
         } catch (IOException e) {
             e.printStackTrace();

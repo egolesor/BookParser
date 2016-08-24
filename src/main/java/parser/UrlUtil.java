@@ -6,5 +6,5 @@ package parser;
 public class UrlUtil {
 
 
-    public static String URL_EBOOKS_COM = "http://www.ebooks.com/subjects/" ;
+    public static String URL_E_BOOKS_COM = "http://www.ebooks.com/subjects/" ;
 }

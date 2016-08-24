@@ -13,7 +13,6 @@ public class BookData {
     public final String profile;
     public final String url;
 
-
     private BookData(String title, String author, String description, String price, String library, String profile, String url) {
         this.title = title;
         this.author = author;
@@ -23,7 +22,8 @@ public class BookData {
         this.profile = profile;
         this.url = url;
     }
-    public static class BookDataBuilder{
+
+    public static class BookDataBuilder {
         private String title;
         private String author;
         private String description;
@@ -32,36 +32,42 @@ public class BookData {
         private String profile;
         private String url;
 
-        public BookDataBuilder setTitle(String title){
+        public BookDataBuilder setTitle(String title) {
             this.title = title;
             return this;
         }
-        public BookDataBuilder setAuthor(String author){
+
+        public BookDataBuilder setAuthor(String author) {
             this.author = author;
             return this;
         }
-        public BookDataBuilder setDescription(String description){
+
+        public BookDataBuilder setDescription(String description) {
             this.description = description;
             return this;
         }
-        public BookDataBuilder setprice(String price){
+
+        public BookDataBuilder setPrice(String price) {
             this.price = price;
             return this;
-        }public BookDataBuilder setLibrary(String library){
+        }
+
+        public BookDataBuilder setLibrary(String library) {
             this.library = library;
             return this;
         }
-        public BookDataBuilder setProfile(String profile){
+
+        public BookDataBuilder setProfile(String profile) {
             this.profile = profile;
             return this;
         }
 
-        public BookDataBuilder setUrl(String url){
+        public BookDataBuilder setUrl(String url) {
             this.url = url;
             return this;
         }
 
-        public BookData build(){
+        public BookData build() {
             return new BookData(title, author, description, price, library, profile, url);
         }
     }

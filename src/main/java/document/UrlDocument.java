@@ -18,6 +18,6 @@ class UrlDocument implements DocumentGenerator {
     }
 
     public Document getDocument() throws IOException {
-        return Jsoup.connect(UrlUtil.URL_EBOOKS_COM + profile + "/").get();
+        return Jsoup.connect(UrlUtil.URL_E_BOOKS_COM + profile + "/").get();
     }
 }
