@@ -24,22 +24,22 @@ public class AppTest {
         DocumentBuilder documentBuilder= new DocumentBuilder();
 
         List<BookData> bookDataList = null;
-        String profile = "education";
+        String profile = "art";
 
         BaseParser parser = new EBooksParser();
 
         try {
             List<Element> elements = parser.getOffers(documentBuilder.setProfile(profile).buildFromUrl());
 
-            BookDataGetter getter = new EBookComDataGetter();
+            BookDataGetter getters = new EBookComDataGetter();
             bookDataList = BookDataFactory.newListBookData(elements,
-                    getter, UrlUtil.URL_E_BOOKS_COM,profile);
+                    getters, UrlUtil.URL_E_BOOKS_COM, profile);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println(bookDataList);
+        bookDataList.forEach(System.out::println);
     }
 
 

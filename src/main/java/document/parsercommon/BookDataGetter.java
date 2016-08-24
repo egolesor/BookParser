@@ -5,15 +5,15 @@ import org.jsoup.nodes.Element;
 /**
  * Created by ehsan on 24.08.16.
  */
-public interface BookDataGetter {
+public interface BookDataGetter<T> {
 
-    String getTitle(Element element);
+    String getTitle(T element);
 
-    String getUrl(Element element);
+    String  getUrl(T element);
 
-    String getAuthor(Element element);
+    String getAuthor(T element);
 
-    String getDescription(Element element);
+    String getDescription(T element);
 
-    String getPrice(Element element);
+    String getPrice(T element);
 }
