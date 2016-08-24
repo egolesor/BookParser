@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element;
  * Hello world!
  *
  */
-public class EBookComDataGetter extends BookDataGetter{
+public class EBookComDataGetter implements BookDataGetter{
 
     public String getUrl(Element element){
         return element.select(".book-title a").attr("href");
